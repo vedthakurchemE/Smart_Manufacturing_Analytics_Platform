@@ -1,0 +1,7 @@
+matplotlib
+networkx
+sklearn
+scipy
+plotly
+pulp
+joblib
