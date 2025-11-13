@@ -6,3 +6,6 @@ scipy
 plotly
 pulp
 joblib
+prophet
+seaborn
+fpdf
