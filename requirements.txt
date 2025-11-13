@@ -1,6 +1,7 @@
+streamlit
 matplotlib
 networkx
-sklearn
+scikit-learn
 scipy
 plotly
 pulp
