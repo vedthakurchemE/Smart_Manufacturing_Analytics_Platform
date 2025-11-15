@@ -63,6 +63,4 @@ def run():
         - 🌡️ HVAC thermal loss analysis  
         """)
 
-    # === Footer ===
-    st.markdown("---")
-    st.info("🔹 Module 9 | Part of HeatTransferAI Suite © Ved Thakur | BTech ChemEng | IPS Academy Indore")
+

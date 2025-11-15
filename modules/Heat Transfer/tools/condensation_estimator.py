@@ -56,5 +56,4 @@ def run():
         st.markdown("- Suitable for smooth surfaces with moderate temperature gradients.")
         st.markdown("- **h ∝ (ΔT)^(-0.25)** → Higher ΔT decreases film thickness, increasing h.")
 
-    st.markdown("---")
-    st.info("Module 8 | HeatTransferAI Suite © Ved Thakur | IPS Academy Indore")
+

@@ -82,6 +82,3 @@ def run():
         - ➤ Resulting effectiveness ≈ 0.76
         """)
 
-    # === Footer ===
-    st.markdown("---")
-    st.info("Module 6 | HeatTransferAI Suite © Ved Thakur | IPS Academy Indore")

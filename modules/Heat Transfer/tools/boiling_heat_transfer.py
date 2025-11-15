@@ -64,5 +64,3 @@ def run():
         except Exception as e:
             st.error(f"⚠️ Calculation error: {e}")
 
-    st.markdown("---")
-    st.info("Module 7 | Part of HeatTransferAI Suite © 2025 Ved Thakur")
