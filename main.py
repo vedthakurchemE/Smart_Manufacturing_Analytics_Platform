@@ -196,3 +196,24 @@ if isinstance(results, dict) and results:
     for key, value in results.items():
         st.markdown(f"- **{key}:** {value}")
 
+# ---- Feedback Section ----
+import datetime
+
+st.markdown("---")
+st.subheader("💬 Feedback")
+feedback = st.text_area("Your feedback, suggestions, or improvement ideas:", key="feedback_text")
+if st.button("Submit Feedback"):
+    if "feedback_list" not in st.session_state:
+        st.session_state["feedback_list"] = []
+    st.session_state["feedback_list"].append({
+        "text": feedback,
+        "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    })
+    st.success("Thank you for your feedback!")
+
+# Display feedback history (optional, only current session)
+if "feedback_list" in st.session_state and st.session_state["feedback_list"]:
+    st.markdown("#### Recent Feedback (this session):")
+    for item in st.session_state["feedback_list"][-5:][::-1]:
+        st.write(f"🕒 {item['time']} \n- {item['text']}")
+
