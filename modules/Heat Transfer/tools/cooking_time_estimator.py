@@ -94,4 +94,4 @@ def run():
 
     st.markdown("---")
     st.info("💡 Tip: Best for small foods, metals, or objects with high internal conductivity and low Biot number.")
-    st.caption("🧠 Created by Ved Thakur | IPS Academy Indore | ChemEng")
+

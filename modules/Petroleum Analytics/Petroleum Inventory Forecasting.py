@@ -57,8 +57,4 @@ def run():
     future_forecast = forecast[["ds", "yhat"]].tail(future_days)
     st.dataframe(future_forecast.rename(columns={"ds": "Date", "yhat": "Forecasted Inventory"}), use_container_width=True)
 
-    # Download
-    st.subheader("📁 Download Forecast")
-    download_df = pd.merge(df, forecast[["ds", "yhat"]], left_on="Date", right_on="ds", how="left").drop(columns=["ds"])
-    csv = download_df.to_csv(index=False)
-    st.download_button("⬇️ Download Forecast CSV", data=csv, file_name="inventory_forecast.csv", mime="text/csv")
+

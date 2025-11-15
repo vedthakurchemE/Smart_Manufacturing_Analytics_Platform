@@ -79,5 +79,4 @@ def run():
 💡 Tip: For complex structures, combine series and parallel concepts.
 """)
 
-    st.markdown("---")
-    st.caption("Module 10 | HeatTransferAI Suite © Ved Thakur")
+

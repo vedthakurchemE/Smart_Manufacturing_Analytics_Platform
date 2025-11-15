@@ -196,9 +196,3 @@ if isinstance(results, dict) and results:
     for key, value in results.items():
         st.markdown(f"- **{key}:** {value}")
 
-# === Footer ===
-st.markdown("---")
-st.markdown(
-    "<div style='text-align: center; color: gray;'>🔬 Built by <b>Ved Thakur</b> | IPS Academy Indore | BTech ChemEng (2025–2029)</div>",
-    unsafe_allow_html=True
-)

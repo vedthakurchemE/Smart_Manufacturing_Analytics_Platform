@@ -63,7 +63,4 @@ def run():
 
     st.metric("📆 Estimated Replacement Time", f"{replacement_time:.1f} days")
 
-    # Download results
-    st.subheader("📁 Download Fitted Data")
-    csv = df.to_csv(index=False)
-    st.download_button("⬇️ Download CSV", data=csv, file_name="catalyst_life_cycle.csv", mime="text/csv")
+

@@ -14,9 +14,6 @@ def run():
     st.title("🔥 Energy Loss Visualizer in Heat Exchangers")
     st.markdown("Simulate and visualize energy loss in crude preheat trains or heat recovery networks.")
 
-    st.sidebar.header("📥 Input Stream Data")
-    uploaded_file = st.sidebar.file_uploader("Upload Stream Data CSV", type=["csv"])
-
     if uploaded_file:
         df = pd.read_csv(uploaded_file)
     else:

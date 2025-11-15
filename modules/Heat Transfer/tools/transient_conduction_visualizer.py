@@ -115,4 +115,4 @@ def run():
 
     st.markdown("---")
     st.info("💡 Tip: Try different α and boundary conditions to simulate various materials and cooling scenarios.")
-    st.caption("👨‍🔬 Built by Ved Thakur | IPS Academy Indore | ChemEng")
+

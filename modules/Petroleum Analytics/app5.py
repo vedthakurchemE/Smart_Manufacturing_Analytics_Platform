@@ -50,6 +50,4 @@ def run():
     except Exception as e:
         st.error(f"❌ Error while loading `{module_filename}`:\n\n`{e}`")
 
-    # === Footer ===
-    st.markdown("---")
-    st.caption("👨‍🔬 Built by Ved Thakur | BTech ChemEng | IPS Academy Indore")
+

@@ -60,7 +60,3 @@ def run():
     st.metric("🌫️ Average NOx Emission", f"{avg_emissions['NOx (kg/hr)']} kg/hr")
     st.metric("🛢️ Average SOx Emission", f"{avg_emissions['SOx (kg/hr)']} kg/hr")
 
-    # === Download Results ===
-    st.subheader("📁 Download Emission Report")
-    csv_data = df.to_csv(index=False)
-    st.download_button("⬇️ Download CSV", data=csv_data, file_name="emission_report.csv", mime="text/csv")

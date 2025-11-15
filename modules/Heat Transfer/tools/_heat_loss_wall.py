@@ -69,5 +69,4 @@ def run():
     except ZeroDivisionError:
         st.error("❌ Error: Total resistance is zero. Please check your inputs.")
 
-    st.markdown("---")
-    st.caption("👨‍🔬 Developed by Ved Thakur | BTech Chemical Engineering | IPS Academy Indore")
+

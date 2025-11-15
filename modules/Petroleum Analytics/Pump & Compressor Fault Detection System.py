@@ -60,6 +60,3 @@ def run():
                       title="🌡️ Temperature Anomaly Detection", color_discrete_map={"Normal": "orange", "Anomaly": "red"})
     st.plotly_chart(fig3, use_container_width=True)
 
-    st.subheader("📁 Download Results")
-    csv = df.to_csv(index=False)
-    st.download_button("⬇️ Download Annotated CSV", data=csv, file_name="fault_detection_output.csv", mime="text/csv")

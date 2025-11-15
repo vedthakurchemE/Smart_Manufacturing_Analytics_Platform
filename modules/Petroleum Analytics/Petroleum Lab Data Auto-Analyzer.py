@@ -84,7 +84,4 @@ def run():
     else:
         st.success("✅ All parameters within acceptable QC range.")
 
-    # === Download Annotated Data ===
-    st.subheader("📁 Download Analyzed Data")
-    csv = df.to_csv(index=False)
-    st.download_button("⬇️ Download CSV", data=csv, file_name="lab_data_analyzed.csv", mime="text/csv")
+

@@ -13,10 +13,6 @@ def run():
     st.title("🚚 Petroleum Supply Chain Optimizer")
     st.markdown("Optimize transport cost from wells to refineries using Mixed Integer Linear Programming (MILP).")
 
-    st.sidebar.header("📥 Upload Data")
-    wells_file = st.sidebar.file_uploader("Upload Wells Data (CSV)", type=["csv"])
-    refineries_file = st.sidebar.file_uploader("Upload Refineries Data (CSV)", type=["csv"])
-
     # Load demo data if not uploaded
     if wells_file and refineries_file:
         wells_df = pd.read_csv(wells_file)
