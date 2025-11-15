@@ -1,6 +1,6 @@
 # 📘 Module 4: Energy Loss Visualizer in Heat Exchangers | PetroStream AI Suite
 # 🔥 Visualize thermal energy loss across exchangers (basic pinch + Sankey)
-# 📦 Author: Ved Thakur | IPS Academy Indore | BTech ChemEng
+# 📦 Author: Ved Thakur | Semester 1 | IPS Academy Indore | ChemE (2025-2029)
 
 import streamlit as st
 import pandas as pd
@@ -8,24 +8,20 @@ import numpy as np
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 
-
 def run():
     st.set_page_config(page_title="🔥 Energy Loss Visualizer", layout="centered")
     st.title("🔥 Energy Loss Visualizer in Heat Exchangers")
     st.markdown("Simulate and visualize energy loss in crude preheat trains or heat recovery networks.")
 
-    if uploaded_file:
-        df = pd.read_csv(uploaded_file)
-    else:
-        # Simulated data if no upload
-        df = pd.DataFrame({
-            "Stream": ["Crude A", "Crude B", "Product A", "Cooling Water"],
-            "Type": ["Hot", "Hot", "Cold", "Cold"],
-            "m_dot (kg/s)": [5.0, 3.0, 4.5, 6.0],
-            "Cp (kJ/kg-K)": [2.1, 2.0, 2.2, 4.2],
-            "T_in (°C)": [300, 280, 100, 30],
-            "T_out (°C)": [200, 190, 250, 70]
-        })
+    # --- Always use internal dataframe ---
+    df = pd.DataFrame({
+        "Stream": ["Crude A", "Crude B", "Product A", "Cooling Water"],
+        "Type": ["Hot", "Hot", "Cold", "Cold"],
+        "m_dot (kg/s)": [5.0, 3.0, 4.5, 6.0],
+        "Cp (kJ/kg-K)": [2.1, 2.0, 2.2, 4.2],
+        "T_in (°C)": [300, 280, 100, 30],
+        "T_out (°C)": [200, 190, 250, 70]
+    })
 
     st.subheader("📊 Stream Data")
     st.dataframe(df)

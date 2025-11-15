@@ -1,6 +1,6 @@
 # 📘 Module 9: Petroleum Supply Chain Optimizer | PetroStream AI Suite
 # 🚚 Optimize logistics cost from oil wells to refineries using MILP + GeoMap
-# 📦 Author: Ved Thakur | IPS Academy Indore | BTech ChemEng
+# 📦 Author: Ved Thakur | Semester 1 | IPS Academy Indore | ChemE (2025-2029)
 
 import streamlit as st
 import pandas as pd
@@ -13,25 +13,20 @@ def run():
     st.title("🚚 Petroleum Supply Chain Optimizer")
     st.markdown("Optimize transport cost from wells to refineries using Mixed Integer Linear Programming (MILP).")
 
-    # Load demo data if not uploaded
-    if wells_file and refineries_file:
-        wells_df = pd.read_csv(wells_file)
-        ref_df = pd.read_csv(refineries_file)
-    else:
-        st.sidebar.info("Using demo data...")
-        wells_df = pd.DataFrame({
-            "Well": ["Well-A", "Well-B", "Well-C"],
-            "Supply": [100, 150, 120],
-            "Lat": [20.5, 21.0, 22.1],
-            "Lon": [72.9, 73.1, 72.5]
-        })
+    # --- Always use demo data ---
+    wells_df = pd.DataFrame({
+        "Well": ["Well-A", "Well-B", "Well-C"],
+        "Supply": [100, 150, 120],
+        "Lat": [20.5, 21.0, 22.1],
+        "Lon": [72.9, 73.1, 72.5]
+    })
 
-        ref_df = pd.DataFrame({
-            "Refinery": ["Ref-1", "Ref-2"],
-            "Demand": [200, 170],
-            "Lat": [19.8, 22.3],
-            "Lon": [73.0, 72.6]
-        })
+    ref_df = pd.DataFrame({
+        "Refinery": ["Ref-1", "Ref-2"],
+        "Demand": [200, 170],
+        "Lat": [19.8, 22.3],
+        "Lon": [73.0, 72.6]
+    })
 
     st.subheader("🛢️ Oil Wells")
     st.dataframe(wells_df)
