@@ -42,4 +42,4 @@ def run():
     except Exception as e:
         st.error(f"❌ Error loading `{filename}`:\n\n`{e}`")
 
-
+st.caption("👤 Ved Thakur | Semester 1 | IPS Academy Indore | B.Tech ChemEng | 2025-2029")

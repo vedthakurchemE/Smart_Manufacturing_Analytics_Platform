@@ -196,6 +196,3 @@ if isinstance(results, dict) and results:
     for key, value in results.items():
         st.markdown(f"- **{key}:** {value}")
 
- # === Footer ===
-    st.markdown("---")
-    st.caption("👨‍🔬 Created by Ved Thakur | BTech ChemEng | IPS Academy Indore")
