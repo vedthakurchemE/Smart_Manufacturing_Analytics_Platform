@@ -4,6 +4,7 @@ import importlib.util
 import sqlite3
 import pandas as pd
 import time
+import datetime
 
 st.set_page_config(
     page_title="📘 Semester 1 – Engineering Project Suite",
