@@ -1,6 +1,6 @@
 # 📘 Module 10: Petroleum Lab Data Auto-Analyzer | PetroStream AI Suite
 # 🧪 Analyze lab parameters: distillation, flash point, viscosity, pour point
-# 📦 Author: Ved Thakur | IPS Academy Indore | BTech ChemEng
+# 📦 Author: Ved Thakur | Semester 1 | IPS Academy Indore | ChemE (2025-2029)
 
 import streamlit as st
 import pandas as pd
@@ -10,22 +10,16 @@ import seaborn as sns
 def run():
     st.set_page_config(page_title="🧪 Lab Data Auto-Analyzer", layout="centered")
     st.title("🧪 Petroleum Lab Data Auto-Analyzer")
-    st.markdown("Upload and auto-analyze lab data like distillation curve, flash point, viscosity, pour point.")
+    st.markdown("Auto-analyze lab data like distillation curve, flash point, viscosity, pour point.")
 
-    st.sidebar.header("📥 Upload Lab Data CSV")
-    uploaded_file = st.sidebar.file_uploader("Upload CSV", type=["csv"])
-
-    if uploaded_file:
-        df = pd.read_csv(uploaded_file)
-    else:
-        st.sidebar.info("No file uploaded. Using simulated sample data...")
-        df = pd.DataFrame({
-            "Temp (°C)": [100, 150, 200, 250, 300, 350],
-            "Vol (%)": [10, 30, 50, 70, 90, 100],
-            "Viscosity (cSt)": [2.5, 2.7, 3.0, 3.3, 3.5, 3.7],
-            "Flash Point (°C)": [45, 48, 52, 56, 60, 64],
-            "Pour Point (°C)": [-10, -8, -7, -6, -5, -4]
-        })
+    # --- Simulated sample data only ---
+    df = pd.DataFrame({
+        "Temp (°C)": [100, 150, 200, 250, 300, 350],
+        "Vol (%)": [10, 30, 50, 70, 90, 100],
+        "Viscosity (cSt)": [2.5, 2.7, 3.0, 3.3, 3.5, 3.7],
+        "Flash Point (°C)": [45, 48, 52, 56, 60, 64],
+        "Pour Point (°C)": [-10, -8, -7, -6, -5, -4]
+    })
 
     st.subheader("📊 Raw Lab Data")
     st.dataframe(df)
@@ -83,5 +77,3 @@ def run():
             st.error(v)
     else:
         st.success("✅ All parameters within acceptable QC range.")
-
-
