@@ -29,6 +29,48 @@ if "loaded" not in st.session_state:
     st.success("✅ Project Loaded!")
     st.session_state["loaded"] = True
     st.rerun()      # reload and show actual dashboard
+    # 🧑‍🔬 Advanced Process & Data Science Suite
+
+# ==== DESCRIPTION SCREEN ====
+if "description_done" not in st.session_state:
+    st.session_state["description_done"] = False
+
+if not st.session_state["description_done"]:
+    st.markdown("""
+    # 🧑‍🔬 Advanced Process & Data Science Suite
+
+    Welcome to the **Process Engineering and Petroleum Analytics Platform** – a state-of-the-art dashboard uniting key domains of modern engineering and data science.
+
+    Built for deep exploration and innovation, this suite empowers users with interactive tools for:
+
+    - 🌡️ **Mass & Heat Transfer** – Simulate and analyze real process systems, from heat exchangers to chemical reactors
+    - 🔢 **Mathematical Modeling** – Develop, visualize and solve mathematical models for dynamic and steady-state engineering problems
+    - 🛢️ **Petroleum Analysis** – Unlock critical insights from composition, thermodynamic properties, and process optimization in energy systems
+    - 🧮 **Thermodynamics Simulations** – Visualize cycles and processes, calculate efficiencies, track energy balances across diverse scenarios
+    - ⚖️ **Scalable Data Science** – Apply advanced analytic techniques to large-scale engineering data, automate reporting, and uncover trends for research and industry
+
+    ---
+
+    ### 🌟 Key Features
+
+    - **Interactive Visualization:** Seamless plotting and analysis of process variables, system responses, and engineering datasets.
+    - **Modular Toolkits:** Each module is designed for specialized computations—mass balances, energy analysis, predictive modeling, and more.
+    - **Data-Driven Process Engineering:** Integrate real and simulated plant/lab data, perform multivariate analysis, optimize workflows, and validate models.
+    - **Professional & Educational Utility:** Suitable for students mastering chemical engineering concepts and professionals pushing boundaries in R&D, production, and analytics.
+    - **Scalable and Extensible:** Future-ready architecture enables integration of new models, workflows, and IoT/plant data for smart manufacturing.
+
+    ---
+
+    ### 🚀 Why This Platform?
+
+    By merging deep engineering principles with powerful analytics, this platform helps you master fundamental concepts and drive practical innovations in process and energy industries.
+
+    Empower your workflow. **Analyze, discover, and innovate — from thermodynamics to data science.**
+    """)
+    if st.button("Next"):
+        st.session_state["description_done"] = True
+        st.rerun()
+    st.stop()
 
 # ——— Main Dashboard Section ———
 # Existing code for navigation, modules, DB viewer, etc. comes after this.
