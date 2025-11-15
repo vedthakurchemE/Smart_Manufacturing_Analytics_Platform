@@ -211,9 +211,16 @@ if st.button("Submit Feedback"):
     })
     st.success("Thank you for your feedback!")
 
-# Display feedback history (optional, only current session)
-if "feedback_list" in st.session_state and st.session_state["feedback_list"]:
-    st.markdown("#### Recent Feedback (this session):")
-    for item in st.session_state["feedback_list"][-5:][::-1]:
-        st.write(f"🕒 {item['time']} \n- {item['text']}")
+st.markdown("---")
+st.subheader("💬 Feedback for this Tool")
+feedback = st.text_area("Share your thoughts or suggestions:", key=f"feedback_{st.session_state.get('tool_name', '')}")
+if st.button("Submit Feedback", key=f"submit_{st.session_state.get('tool_name', '')}"):
+    if "feedback_tool_list" not in st.session_state:
+        st.session_state["feedback_tool_list"] = []
+    st.session_state["feedback_tool_list"].append({
+        "tool": st.session_state.get('tool_name', 'Unknown Tool'),
+        "text": feedback,
+        "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    })
+    st.success("Thank you for your valuable feedback!")
 
