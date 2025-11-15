@@ -1,16 +1,13 @@
-# 🔥 Combustion Efficiency Simulator + AI Predictor
-# Part of the Real-World Thermodynamics AI Project
-# Author: Ved Thakur
+# 🔥 Combustion Efficiency Simulator
+# Part of the Real-World Thermodynamics Project
+# Author: Ved Thakur | Semester 1 | IPS Academy Indore | ChemE (2025-2029)
 
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
-import os
 import matplotlib.pyplot as plt
 
 # ===== Constants =====
-MODEL_PATH = "../../../ai_model/model.pkl"
 FUEL_OPTIONS = ["Methane (CH4)", "Propane (C3H8)", "Octane (C8H18)", "Hydrogen (H2)", "Carbon Monoxide (CO)"]
 
 STOICH_AFR = {
@@ -21,18 +18,6 @@ STOICH_AFR = {
     "Carbon Monoxide (CO)": 2.4
 }
 
-# ===== Load ML Model =====
-@st.cache_resource
-def load_model():
-    if not os.path.exists(MODEL_PATH):
-        st.warning("⚠️ AI model file not found at `ai_model/model.pkl`. Please train the model.")
-        return None
-    try:
-        return joblib.load(MODEL_PATH)
-    except Exception as e:
-        st.error(f"❌ Failed to load model: {e}")
-        return None
-
 # ===== Core Thermodynamic Simulation =====
 def compute_efficiency(fuel: str, afr: float) -> float:
     afr_opt = STOICH_AFR.get(fuel, 15.0)
@@ -42,8 +27,8 @@ def compute_efficiency(fuel: str, afr: float) -> float:
 # ===== Streamlit App =====
 def combustion_efficiency_simulator():
     st.set_page_config(page_title="Combustion Efficiency Simulator", layout="centered")
-    st.title("🛢️ Combustion Efficiency Simulator + AI Predictor")
-    st.markdown("Simulate combustion efficiency of different fuels and predict outcomes using a trained Machine Learning model.")
+    st.title("🛢️ Combustion Efficiency Simulator")
+    st.markdown("Simulate combustion efficiency of different fuels based on air-fuel ratio and thermodynamic principles.")
 
     # Sidebar: Inputs
     st.sidebar.header("🔧 Input Parameters")
@@ -67,20 +52,6 @@ def combustion_efficiency_simulator():
     ax.legend()
     ax.grid(True)
     st.pyplot(fig)
-
-    # Output: AI Model Prediction
-    model = load_model()
-    if model:
-        try:
-            fuel_idx = FUEL_OPTIONS.index(fuel)
-            X_pred = np.array([[fuel_idx, afr]])
-            predicted_eff = model.predict(X_pred)[0]
-            st.subheader("🤖 AI Predicted Efficiency")
-            st.info(f"AI Model Prediction: **{round(predicted_eff, 2)}%**")
-        except Exception as e:
-            st.error(f"AI prediction failed: {e}")
-    else:
-        st.info("Train the model and place it in `ai_model/model.pkl` to enable AI prediction.")
 
 def run():
     combustion_efficiency_simulator()
