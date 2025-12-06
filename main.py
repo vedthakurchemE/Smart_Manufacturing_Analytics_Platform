@@ -825,7 +825,7 @@ with footer_col3:
     <div style='text-align: center; padding: 1.5rem; background: #f8f9fa; 
                 border-radius: 10px; margin: 1rem 0.5rem;'>
         <h4 style='color: #2E86AB;'>🔗 GitHub</h4>
-        <p><a href='https://github.com/yourusername' target='_blank' 
+        <p><a href='https://github.com/vedthakurchemE' target='_blank' 
            style='color: #495057; text-decoration: none;'>
            View Projects →</a></p>
     </div>
