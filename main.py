@@ -90,32 +90,59 @@ st.markdown("""
 # PROJECT METADATA CONFIGURATION
 # ===================================
 PROJECT_METADATA = {
-    "🎨 Project Alpha": {
-        "tagline": "Creative design automation tool",
-        "problem": "Manual design processes were slow and repetitive",
-        "solution": "Automated workflow with intelligent templates",
-        "tech": ["Python", "Streamlit", "PIL", "Pandas"],
-        "outcome": "Reduced design time by 60%",
+    "🔥 Heat Transfer": {
+        "tagline": "Heat transfer analysis and calculations",
+        "problem": "Complex heat transfer calculations were time-consuming",
+        "solution": "Automated heat transfer analysis tools",
+        "tech": ["Python", "NumPy", "Matplotlib", "SciPy"],
+        "outcome": "Reduced analysis time by 70%",
         "role": "Lead Developer",
-        "users": "25+ designers"
+        "users": "Engineering students"
     },
-    "📊 Project Beta": {
-        "tagline": "Advanced data analytics platform",
-        "problem": "Complex data required manual analysis",
-        "solution": "Real-time dashboards with AI insights",
-        "tech": ["Python", "Plotly", "NumPy", "ML"],
-        "outcome": "Improved decision-making speed by 80%",
-        "role": "Data Architect",
-        "users": "100+ analysts"
+    "💧 Mass Transfer": {
+        "tagline": "Mass transfer operations simulator",
+        "problem": "Manual mass transfer calculations prone to errors",
+        "solution": "Interactive mass transfer computation suite",
+        "tech": ["Python", "Pandas", "NumPy", "Streamlit"],
+        "outcome": "Improved calculation accuracy to 99%",
+        "role": "Process Engineer",
+        "users": "Chemical engineering students"
     },
-    "🔧 Project Gamma": {
-        "tagline": "Engineering calculation suite",
-        "problem": "Engineers needed quick validation tools",
-        "solution": "Comprehensive calculator library",
-        "tech": ["Python", "SciPy", "Matplotlib"],
-        "outcome": "Eliminated calculation errors",
-        "role": "Technical Lead",
-        "users": "50+ engineers"
+    "📐 Mathematics Modelling": {
+        "tagline": "Advanced mathematical modeling toolkit",
+        "problem": "Complex mathematical models difficult to visualize",
+        "solution": "Interactive modeling and visualization platform",
+        "tech": ["Python", "SymPy", "NumPy", "Matplotlib"],
+        "outcome": "Enhanced understanding of complex systems",
+        "role": "Algorithm Developer",
+        "users": "Engineering & Math students"
+    },
+    "🛢️ Petroleum Analytics": {
+        "tagline": "Petroleum data analysis and insights",
+        "problem": "Petroleum data analysis required specialized tools",
+        "solution": "Comprehensive petroleum analytics dashboard",
+        "tech": ["Python", "Pandas", "Plotly", "ML"],
+        "outcome": "Streamlined petroleum data workflows",
+        "role": "Data Analyst",
+        "users": "Petroleum engineers"
+    },
+    "📊 Scalable Data Science": {
+        "tagline": "Large-scale data science platform",
+        "problem": "Processing large datasets was inefficient",
+        "solution": "Scalable analytics with advanced visualizations",
+        "tech": ["Python", "Pandas", "NumPy", "Plotly", "ML"],
+        "outcome": "10x faster data processing",
+        "role": "Data Scientist",
+        "users": "Data science professionals"
+    },
+    "🌡️ Thermodynamics": {
+        "tagline": "Thermodynamic analysis and simulations",
+        "problem": "Thermodynamic cycle analysis was complex",
+        "solution": "Interactive thermodynamic calculator suite",
+        "tech": ["Python", "SciPy", "Matplotlib", "Thermodynamics"],
+        "outcome": "Simplified complex calculations",
+        "role": "Thermal Engineer",
+        "users": "Mechanical engineering students"
     }
 }
 
@@ -307,9 +334,12 @@ init_db()
 # PROJECT MODULE MAPPING
 # ===================================
 PROJECT_SUITES = {
-    "🎨 Project Alpha": "modules.alpha.alpha_main",
-    "📊 Project Beta": "modules.beta.beta_main",
-    "🔧 Project Gamma": "modules.gamma.gamma_main"
+    "🔥 Heat Transfer": "modules.Heat Transfer.app2",
+    "💧 Mass Transfer": "modules.Mass Transfer.app1",
+    "📐 Mathematics Modelling": "modules.Mathematics Modelling.app3",
+    "🛢️ Petroleum Analytics": "modules.Petroleum Analytics.app5",
+    "📊 Scalable Data Science": "modules.Scalable Data Science.app4",
+    "🌡️ Thermodynamics": "modules.Thermodynamics.app6"
 }
 
 # ===================================
@@ -356,29 +386,29 @@ if not st.session_state["description_done"]:
     with col1:
         st.markdown("""
         <div class='stats-box'>
-            <h2 style='margin: 0; color: white; font-size: 2.5rem;'>3</h2>
-            <p style='margin: 0; color: white; opacity: 0.95;'>Projects</p>
+            <h2 style='margin: 0; color: white; font-size: 2.5rem;'>6</h2>
+            <p style='margin: 0; color: white; opacity: 0.95;'>Project Suites</p>
         </div>
         """, unsafe_allow_html=True)
     with col2:
         st.markdown("""
         <div class='stats-box' style='background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);'>
-            <h2 style='margin: 0; color: white; font-size: 2.5rem;'>100+</h2>
-            <p style='margin: 0; color: white; opacity: 0.95;'>Users</p>
+            <h2 style='margin: 0; color: white; font-size: 2.5rem;'>200+</h2>
+            <p style='margin: 0; color: white; opacity: 0.95;'>Active Users</p>
         </div>
         """, unsafe_allow_html=True)
     with col3:
         st.markdown("""
         <div class='stats-box' style='background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);'>
-            <h2 style='margin: 0; color: white; font-size: 2.5rem;'>2000+</h2>
+            <h2 style='margin: 0; color: white; font-size: 2.5rem;'>5000+</h2>
             <p style='margin: 0; color: white; opacity: 0.95;'>Lines of Code</p>
         </div>
         """, unsafe_allow_html=True)
     with col4:
         st.markdown("""
         <div class='stats-box' style='background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);'>
-            <h2 style='margin: 0; color: white; font-size: 2.5rem;'>60%</h2>
-            <p style='margin: 0; color: white; opacity: 0.95;'>Efficiency Gain</p>
+            <h2 style='margin: 0; color: white; font-size: 2.5rem;'>75%</h2>
+            <p style='margin: 0; color: white; opacity: 0.95;'>Time Saved</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -391,43 +421,49 @@ if not st.session_state["description_done"]:
         st.markdown("""
         ## 🌟 About This Portfolio
 
-        Welcome to my **Engineering Portfolio Hub** – a comprehensive platform showcasing 
-        innovative solutions built to solve real-world problems.
+        Welcome to my **Smart Manufacturing Analytics Platform** – a comprehensive suite of 6
+        integrated engineering tools covering advanced process engineering and data science.
 
         ### 🎯 Key Features
 
-        **📊 Real-Time Analytics**  
-        Instant visualization and data processing
+        **🔥 Heat & Mass Transfer**  
+        Advanced simulation tools for thermal and mass transfer operations
 
-        **🧮 Automated Calculations**  
-        Precision tools for engineering workflows
+        **📐 Mathematical Modeling**  
+        Complex system modeling with interactive visualizations
 
-        **💾 Data Management**  
-        Integrated database for results tracking
+        **🛢️ Petroleum Analytics**  
+        Specialized tools for petroleum data analysis
 
-        **📥 Export Options**  
-        Download results in multiple formats
+        **📊 Data Science Suite**  
+        Scalable analytics for large engineering datasets
+
+        **🌡️ Thermodynamics**  
+        Comprehensive thermodynamic cycle analysis
 
         ### 💡 Built With
-        Python • Streamlit • Pandas • NumPy • Matplotlib • SQLite
+        Python • Streamlit • Pandas • NumPy • Matplotlib • SciPy • ML
         """)
 
     with col_right:
         st.markdown("""
         ## 👨‍💻 About Me
 
-        **Student/Professional**  
-        Your Institution
+        **Engineering Student**  
+        Process & Data Science
 
         **Focus Areas**
-        - Software Development
+        - Heat & Mass Transfer
+        - Mathematical Modeling
+        - Petroleum Analytics
         - Data Science
-        - Engineering Solutions
+        - Thermodynamics
 
         **Skills**
         - Python Development
-        - Full Stack Applications
-        - Database Management
+        - Process Simulation
+        - Data Analysis
+        - ML Engineering
         """)
 
     st.markdown("---")
@@ -462,8 +498,8 @@ if not st.session_state["description_done"]:
 # ===================================
 # MAIN APPLICATION
 # ===================================
-st.title("📘 Engineering Portfolio Hub")
-st.caption("🔁 Centralized Dashboard • Developed by Your Name")
+st.title("📘 Smart Manufacturing Analytics Platform")
+st.caption("🔁 Advanced Process Engineering & Data Science Suite")
 
 # ===================================
 # SIDEBAR NAVIGATION
