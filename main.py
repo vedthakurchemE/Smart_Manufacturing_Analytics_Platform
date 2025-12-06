@@ -373,7 +373,7 @@ if not st.session_state["description_done"]:
     # Hero Section
     st.markdown("""
     <div style='text-align: center; padding: 2rem 0;'>
-        <h1 style='font-size: 3rem; margin-bottom: 0;'>🎓 Your Name</h1>
+        <h1 style='font-size: 3rem; margin-bottom: 0;'>🎓 Ved Thakur</h1>
         <h2 style='color: #666; font-weight: 400;'>Engineering Portfolio Hub</h2>
         <p style='font-size: 1.2rem; color: #888;'>Institution Name</p>
     </div>
@@ -835,7 +835,7 @@ st.markdown("""
 <div style='margin-top: 3rem; padding: 2rem; background: #f8f9fa; 
             border-radius: 10px; text-align: center;'>
     <p style='color: #6c757d; font-size: 14px; font-weight: 500;'>
-        Developed with ❤️ by <strong style='color: #2E86AB;'>Your Name</strong>
+        Developed by <strong style='color: #2E86AB;'>Ved Thakur</strong>
     </p>
     <p style='color: #adb5bd; font-size: 12px; margin-top: 0.5rem;'>
         Built with Python, Streamlit & Modern Web Technologies
