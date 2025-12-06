@@ -374,8 +374,8 @@ if not st.session_state["description_done"]:
     st.markdown("""
     <div style='text-align: center; padding: 2rem 0;'>
         <h1 style='font-size: 3rem; margin-bottom: 0;'>🎓 Ved Thakur</h1>
-        <h2 style='color: #666; font-weight: 400;'>Engineering Portfolio Hub</h2>
-        <p style='font-size: 1.2rem; color: #888;'>Institution Name</p>
+        <h2 style='color: #666; font-weight: 400;'>Chemical Engineering Portfolio Hub</h2>
+        <p style='font-size: 1.2rem; color: #888;'>IPS Academy</p>
     </div>
     """, unsafe_allow_html=True)
 
