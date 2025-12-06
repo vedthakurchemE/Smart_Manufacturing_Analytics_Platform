@@ -489,7 +489,7 @@ if not st.session_state["description_done"]:
             st.session_state["description_done"] = True
             st.rerun()
     with col2:
-        st.link_button("📧 Contact", "mailto:vedthakursa@@gmail.com", use_container_width=True)
+        st.link_button("📧 Contact", "mailto:vedthakursa@gmail.com", use_container_width=True)
     with col3:
         st.link_button("💼 LinkedIn", "https://www.linkedin.com/in/ved-thakur-0b79bb36a/", use_container_width=True)
 
