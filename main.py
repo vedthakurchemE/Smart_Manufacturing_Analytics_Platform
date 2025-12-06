@@ -491,7 +491,7 @@ if not st.session_state["description_done"]:
     with col2:
         st.link_button("📧 Contact", "mailto:your.email@example.com", use_container_width=True)
     with col3:
-        st.link_button("💼 LinkedIn", "https://linkedin.com/in/yourprofile", use_container_width=True)
+        st.link_button("💼 LinkedIn", "https://www.linkedin.com/in/ved-thakur-0b79bb36a/", use_container_width=True)
 
     st.stop()
 
@@ -814,7 +814,7 @@ with footer_col2:
     <div style='text-align: center; padding: 1.5rem; background: #f8f9fa; 
                 border-radius: 10px; margin: 1rem 0.5rem;'>
         <h4 style='color: #2E86AB;'>💼 LinkedIn</h4>
-        <p><a href='https://linkedin.com/in/yourprofile' target='_blank' 
+        <p><a href='https://www.linkedin.com/in/ved-thakur-0b79bb36a/' target='_blank' 
            style='color: #495057; text-decoration: none;'>
            Connect →</a></p>
     </div>
