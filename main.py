@@ -803,9 +803,9 @@ with footer_col1:
     <div style='text-align: center; padding: 1.5rem; background: #f8f9fa; 
                 border-radius: 10px; margin: 1rem 0.5rem;'>
         <h4 style='color: #2E86AB;'>📧 Email</h4>
-        <p><a href='mailto:your.email@example.com' 
+        <p><a href='mailto:vedthakursa@gmail.com' 
            style='color: #495057; text-decoration: none;'>
-           your.email@example.com</a></p>
+           vedthakursa@gmail.com</a></p>
     </div>
     """, unsafe_allow_html=True)
 
