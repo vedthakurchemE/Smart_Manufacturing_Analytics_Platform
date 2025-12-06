@@ -7,13 +7,21 @@ import pandas as pd
 import sqlite3
 import io
 import contextlib
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import letter
 from PIL import Image
 import matplotlib.pyplot as plt
 import time
 import inspect
 import datetime
+
+# Try to import reportlab, but make it optional
+try:
+    from reportlab.pdfgen import canvas
+    from reportlab.lib.pagesizes import letter
+
+    HAS_REPORTLAB = True
+except ImportError:
+    HAS_REPORTLAB = False
+    st.warning("⚠️ reportlab not installed. PDF export will be disabled. Install with: `pip install reportlab`")
 
 # ===================================
 # APP CONFIGURATION
@@ -258,6 +266,38 @@ def save_upload_to_db(filename, filetype):
     )
     conn.commit()
     conn.close()
+
+
+def generate_pdf_report(display_name, results):
+    """Generate PDF report (only if reportlab is available)"""
+    if not HAS_REPORTLAB:
+        return None
+
+    pdf_buffer = io.BytesIO()
+    c = canvas.Canvas(pdf_buffer, pagesize=letter)
+    width, height = letter
+    y = height - 40
+
+    c.setFont("Helvetica-Bold", 16)
+    c.drawString(50, y, f"{display_name}")
+    c.setFont("Helvetica", 10)
+    c.drawString(50, y - 20, f"Generated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    y -= 50
+
+    c.setFont("Helvetica", 11)
+    for key, value in results.items():
+        text = f"{key}: {value}"
+        if len(text) > 80:
+            text = text[:77] + "..."
+        c.drawString(50, y, text)
+        y -= 20
+        if y < 50:
+            c.showPage()
+            y = height - 40
+
+    c.save()
+    pdf_buffer.seek(0)
+    return pdf_buffer
 
 
 # Initialize database
@@ -615,52 +655,37 @@ def run_project(display_name, module_path):
                 # Download options
                 if results:
                     st.markdown("---")
-                    col1, col2 = st.columns(2)
+
+                    # Always show CSV option
+                    if HAS_REPORTLAB:
+                        col1, col2 = st.columns(2)
+                    else:
+                        col1 = st.container()
+                        col2 = None
 
                     with col1:
                         df = pd.DataFrame(list(results.items()), columns=["Parameter", "Value"])
                         csv_bytes = df.to_csv(index=False).encode()
                         st.download_button(
-                            "📥 CSV",
+                            "📥 Download CSV",
                             data=csv_bytes,
                             file_name=f"{display_name.replace(' ', '_')}_results.csv",
                             mime="text/csv",
                             use_container_width=True
                         )
 
-                    with col2:
-                        # PDF generation
-                        pdf_buffer = io.BytesIO()
-                        c = canvas.Canvas(pdf_buffer, pagesize=letter)
-                        width, height = letter
-                        y = height - 40
-
-                        c.setFont("Helvetica-Bold", 16)
-                        c.drawString(50, y, f"{display_name}")
-                        c.setFont("Helvetica", 10)
-                        c.drawString(50, y - 20, f"Generated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}")
-                        y -= 50
-
-                        c.setFont("Helvetica", 11)
-                        for key, value in results.items():
-                            text = f"{key}: {value}"
-                            if len(text) > 80:
-                                text = text[:77] + "..."
-                            c.drawString(50, y, text)
-                            y -= 20
-                            if y < 50:
-                                c.showPage()
-                                y = height - 40
-
-                        c.save()
-                        pdf_buffer.seek(0)
-                        st.download_button(
-                            "📄 PDF",
-                            data=pdf_buffer,
-                            file_name=f"{display_name.replace(' ', '_')}_results.pdf",
-                            mime="application/pdf",
-                            use_container_width=True
-                        )
+                    # Only show PDF if reportlab is available
+                    if col2 and HAS_REPORTLAB:
+                        with col2:
+                            pdf_buffer = generate_pdf_report(display_name, results)
+                            if pdf_buffer:
+                                st.download_button(
+                                    "📄 Download PDF",
+                                    data=pdf_buffer,
+                                    file_name=f"{display_name.replace(' ', '_')}_results.pdf",
+                                    mime="application/pdf",
+                                    use_container_width=True
+                                )
             else:
                 st.warning(f"⚠️ No `run()` function in {display_name}")
 
